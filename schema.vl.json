@@ -11,7 +11,7 @@
   "vconcat": [
     {
       "title": {
-        "text": "some title",
+        "text": "Simple Vega Lite Schema",
         "fontSize": 18,
         "limit": 540
       },
