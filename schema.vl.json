@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v3.json",
+  "data": {
+    "values": [
+      { "name": "A name", "value": 0.03 },
+      { "name": "C one name", "value": 0.4 },
+      { "name": "B some name", "value": 0.2 },
+      { "name": "other", "value": 0.3 }
+    ]
+  },
+  "vconcat": [
+    {
+      "title": {
+        "text": "some title",
+        "fontSize": 16,
+        "limit": 540
+      },
+      "width": 400,
+      "layer": [{ "mark": "text" }]
+    },
+    {
+      "width": 400,
+      "encoding": {
+        "y": {
+          "field": "name",
+          "type": "ordinal",
+          "axis": { "offset": 10 },
+          "sort": { "order":"descending"}
+        },
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": { "labels": false }
+        },
+        "color": {
+          "legend": null,
+          "field": "value",
+          "type": "nominal",
+          "scale": { "range": ["red"] }
+        }
+      },
+      "layer": [
+        { "mark": "bar", "height": 200 },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 20,
+            "align": "left",
+            "baseline": "middle",
+            "dx": 10
+          },
+          "encoding": {
+            "text": {
+              "field": "value",
+              "type": "quantitative"
+            },
+            "color": {
+              "value": "white"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "config": {
+    "title": { "color": "#fff", "fontSize": 14, "fontWeight": "lighter" },
+    "background": "#888",
+    "style": {
+      "guide-label": { "fill": "#fff" },
+      "guide-title": { "fill": "#fff" }
+    },
+    "axis": {
+      "grid": false,
+      "ticks": false,
+      "title": null,
+      "domain": false,
+      "labelFontSize": 20
+    },
+    "mark": {
+      "tooltip": null
+    },
+    "view": { "stroke": null },
+    "padding": { "left": 35, "top": 25, "right": 35, "bottom": 35 }
+  }
+}
